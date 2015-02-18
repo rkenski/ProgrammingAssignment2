@@ -22,7 +22,8 @@ makeCacheMatrix <- function(x = matrix()) {
 
 ### The following function retrieves the values of the matrix or of its inverse in the cached environment created
 ### through the makeCacheMatrix () function. It first checks if there is a calculated inverse. In case there is,
-### it returns the cached value. In case there isn't 
+### it returns the cached value. In case there isn't, it calculates the inverse and returns it. This function assumes
+### that the provided matrix is always invertible.
 
 cacheSolve <- function(x, ...) {
   m <- x$getinverse() #### Retrieves the cached inverse (if it exists)  
